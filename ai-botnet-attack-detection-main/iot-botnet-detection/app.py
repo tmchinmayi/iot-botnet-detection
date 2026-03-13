@@ -21,7 +21,7 @@ def home():
 def predict():
     file = request.files["file"]
 
-    # Read uploaded CSV
+    # Read CSV file
     data = pd.read_csv(file)
 
     # Remove label column if present
@@ -51,7 +51,7 @@ def predict():
     )
 
 
-# Run server
+# Run server (important for Render)
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
